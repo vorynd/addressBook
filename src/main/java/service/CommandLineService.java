@@ -31,15 +31,15 @@ public class CommandLineService {
                     break;
                 }
                 case 2: {
-                    service.editContact(scanner);
+
                     break;
                 }
                 case 3: {
-                    service.delete(scanner);
+
                     break;
                 }
                 case 4: {
-                    service.showAll();
+
                     break;
                 }
                 case 0: {

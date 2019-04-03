@@ -24,7 +24,7 @@ public class ContactDao {
         return store;
     }
 
-    public Contact findContact(int id) {
+    public Contact findContactById(int id) {
         for (int index = 0; index < store.length; index++) {
             if (store[index] != null && store[index].getId() == id) {
                 return store[index];
@@ -42,7 +42,7 @@ public class ContactDao {
         System.out.println();
     }
 
-    public void deleteContact(int id) {
+    public void deleteContactById(int id) {
         for (int index = 0; index < store.length; index++) {
             if (store[index] != null && store[index].getId() == id) {
                 store[index] = null;
