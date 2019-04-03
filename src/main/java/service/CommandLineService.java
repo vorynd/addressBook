@@ -1,13 +1,16 @@
 package service;
 
+import dao.ContactDao;
+
 import java.util.Scanner;
 
 public class CommandLineService {
+
     private static final Scanner scanner = new Scanner(System.in);
-    ContactService service = new ContactService();
 
+    private static final ContactService service = new ContactService(new ContactDao());
 
-    public void showMenu() {
+    public static void showMenu() {
         System.out.println("1.Add contact.");
         System.out.println("2.Update contact.");
         System.out.println("3.Delete contact.");
@@ -16,7 +19,7 @@ public class CommandLineService {
 
     }
 
-    public void run() {
+    public static void run() {
         boolean exit = false;
         do {
             System.out.println("Please chose menu item.");
@@ -28,16 +31,19 @@ public class CommandLineService {
                     break;
                 }
                 case 2: {
+                    service.editContact(scanner);
                     break;
                 }
                 case 3: {
+                    service.delete(scanner);
                     break;
                 }
                 case 4: {
+                    service.showAll();
                     break;
                 }
                 case 0: {
-                    System.out.println("Thank you for using our app.");
+                    System.out.println("Thank you for using our app!");
                     exit = true;
                     break;
                 }
