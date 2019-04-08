@@ -12,6 +12,7 @@ public class ContactDaoImpl implements ContactDao {
     public void saveContact(Contact contact) {
         for (int argument = 0; argument < store.length; argument++) {
             if (store[argument] == null) {
+                generator = argument;
                 contact.setId(++generator);
                 store[argument] = contact;
                 System.out.println("Contact was added to your contact book");
@@ -71,6 +72,20 @@ public class ContactDaoImpl implements ContactDao {
                 break;
             }
         }
+    }
+
+    public void findContactByName(String name) {
+        boolean found = false;
+        for (int index = 0; index < store.length; index++) {
+            if (store[index] != null && store[index].getName().equals(name)) {
+                found = true;
+                System.out.println(store[index].toString());
+            }
+        }
+        if (!found) {
+            System.out.println("Not found");
+        }
+        System.out.println();
     }
 }
 

@@ -1,7 +1,6 @@
 package entity;
 
 
-
 public class Contact {
     private int id;
     private String name;
