@@ -10,6 +10,13 @@ public class ContactDaoImpl implements ContactDao {
     private Contact[] store = new Contact[10];
 
     public void saveContact(Contact contact) {
+//        for (Contact contactFromStore : getStore()) {
+//            if (contact != null && contact.getName().equals(contactFromStore.getName())&&contact
+//            .getSurName().equals(contactFromStore.getSurName())&&contact.getPhoneNumber().equals(contactFromStore.getPhoneNumber())){
+//
+//            }
+//        }
+
         for (int argument = 0; argument < store.length; argument++) {
             if (store[argument] == null) {
                 generator = argument;
@@ -73,6 +80,7 @@ public class ContactDaoImpl implements ContactDao {
             }
         }
     }
+
 
     public void findContactByName(String name) {
         boolean found = false;
